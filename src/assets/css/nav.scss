@@ -1,0 +1,17 @@
+.btn-power-off {
+  display: flex;
+  background-color: #f2f3f5;
+  color: #818588 !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+  font-size: 23px;
+
+  &:hover {
+    background-color: #818588 !important;
+    color: #f2f3f5 !important;
+  }
+}
