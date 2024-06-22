@@ -23,9 +23,9 @@ export default function Add() {
     }
 
     spinnerHelper.showSpinner(spinnerHelper.CLASS_CONTENT_WRAPPER_TAG);
-    let resultGetPermission = await sendRequestAddPermission(formData);
+    let resultAddPermission = await sendRequestAddPermission(formData);
     spinnerHelper.removeSpinner(spinnerHelper.CLASS_CONTENT_WRAPPER_TAG);
-    if (!resultGetPermission.result) {
+    if (!resultAddPermission.result) {
       return;
     }
 
@@ -43,7 +43,6 @@ export default function Add() {
     return {
       headers: {
         "Content-Type": "application/json",
-        "X-Requested-With": "XMLHttpRequest",
         authorization: `Bearer ${token}`,
       },
     };
