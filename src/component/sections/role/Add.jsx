@@ -154,6 +154,7 @@ export default function Add() {
   return (
     <div className="wrapper">
       <Sidebar />
+      
       <div className="content-wrapper">
         <Title title="اضافه کردن نقش" />
 

@@ -5,6 +5,7 @@ import validateMobile from "../../../validations/mobile";
 import httpHelper from "../../../helpers/http";
 import spinnerHelper from "../../../helpers/spinner";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Cookies from "js-cookie";
 
 export default function LoginWithMobileNumber() {
   const [mobileNumber, setMobileNumber] = useState();
@@ -23,7 +24,8 @@ export default function LoginWithMobileNumber() {
   const sendRequestSendSmsCodeForLogin = async (mobileNumber) => {
     try {
       await httpHelper.postRequest(
-        process.env.REACT_APP_DOMAIN_API + "/api/v1/dashboard/auth/send-sms-code-login",
+        process.env.REACT_APP_DOMAIN_API +
+          "/api/v1/dashboard/auth/send-sms-code-login",
         { "mobile-number": mobileNumber },
         getHeaderForRequest()
       );
@@ -101,7 +103,8 @@ export default function LoginWithMobileNumber() {
   const sendRequestLoginWithSmsCode = async (bodyRequest) => {
     try {
       const resultRequest = await httpHelper.postRequest(
-        process.env.REACT_APP_DOMAIN_API + "/api/v1/dashboard/auth/login-with-sms-code",
+        process.env.REACT_APP_DOMAIN_API +
+          "/api/v1/dashboard/auth/login-with-sms-code",
         bodyRequest,
         getHeaderForRequest()
       );
@@ -138,13 +141,14 @@ export default function LoginWithMobileNumber() {
       return;
     }
 
-    localStorage.setItem("token", resultSendRequestLoginWithSmsCode.token);
+    Cookies.set("she-token", resultSendRequestLoginWithSmsCode.token);
+    //localStorage.setItem("token", resultSendRequestLoginWithSmsCode.token);
 
     toast.success("ورود شما مو.فقیت آمیز بود", {
       ...toastHelper.getOptionErrorToast(),
       autoClose: toastHelper.timeClose,
       onClose: () => {
-        window.location = "/role/all";
+        window.location = "/";
       },
     });
   };

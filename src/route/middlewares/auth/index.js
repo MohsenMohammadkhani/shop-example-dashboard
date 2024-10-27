@@ -23,7 +23,7 @@ const checkUserPermissions = (component, componentName) => {
     routeObject: component,
   };
 };
- 
+
 const hasToken = (component) => {
   const searchParams = new URLSearchParams(window.location.search);
   const token = searchParams.get("token");
@@ -70,9 +70,10 @@ const isUserLogin = (component) => {
   const mainStore = store.getState().auth;
 
   if (!mainStore.isUserLoggedIn) {
+    window.location = "/auth/login-with-sms-code";
     return {
       status: false,
-      routeObject: <Redirect to="/auth/login-with-sms-code" />,
+      // routeObject: <Redirect to="/auth/login-with-sms-code" />,
     };
   }
 

@@ -10,6 +10,10 @@ const listPermissionNameComponent = {
   AllProduct: "manage-products",
   AddProduct: "manage-products",
   EditProduct: "manage-products",
+
+  Order: "buy-product",
+  Payment: "buy-product",
+  UserInfo: "buy-product",
 };
 
 const listPermissionItemMenu = {};
@@ -17,6 +21,10 @@ const listPermissionItemMenu = {};
 const listPermissionMenu = {
   ROLE_PERMISSION_MENU: ["manage-roles", "manage-permissions"],
   PRODUCTS_MENU: ["manage-products"],
+
+  ORDER_MENU: ["buy-product"],
+  PAYMENT_MENU: ["buy-product"],
+  USER_MENU: ["buy-product"],
 };
 
 const isUserHasPermission = (componentName, permissionsUser) => {

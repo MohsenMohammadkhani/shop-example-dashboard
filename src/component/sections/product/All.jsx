@@ -257,6 +257,7 @@ export default function All() {
 
   return (
     <div className="wrapper">
+      {/* <Sidebar openItem="products" activeItem="all" /> */}
       <Sidebar openItem="products" activeItem="all" />
       <div className="content-wrapper">
         <Title title="لیست محصول ها" />

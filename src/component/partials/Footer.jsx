@@ -1,7 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
-const listRouteComponentToHide = ["/", "/auth/login-with-sms-code"];
+const listRouteComponentToHide = [
+  "/auth/login-with-sms-code",
+  "/not-founded",
+];
 
 function ComponentToHide(props) {
   const { location } = props;
@@ -16,9 +19,7 @@ function ComponentToHide(props) {
 function Footer() {
   return (
     <footer className="main-footer text-center">
-      <p className="m-0">
-        ۱۴۰۲ - کلیه حقوق متعلق به شرکت  x است.
-      </p>
+      <p className="m-0">۱۴۰۲ - کلیه حقوق متعلق به شرکت x است.</p>
     </footer>
   );
 }

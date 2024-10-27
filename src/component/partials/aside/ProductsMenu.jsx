@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function ProductsMenu({
-  openItem = null,
-  activeItem = null,
-}) {
+export default function ProductsMenu({ openItem = null, activeItem = null }) {
   return (
     <nav className="mt-2">
       <ul
@@ -18,9 +15,9 @@ export default function ProductsMenu({
        ${openItem === "products" && "menu-open"}`}
         >
           <a
-            href="# "
+            href="#"
             className={`nav-link  
-          ${activeItem === "all" && "active"}`}
+          ${openItem === "products" && "active"}`}
           >
             <i className="nav-icon far fa-hand-rock"></i>
             <p>
@@ -29,7 +26,7 @@ export default function ProductsMenu({
             </p>
           </a>
           <ul className="nav nav-treeview">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/product/all"
                 className={`nav-link  
@@ -38,7 +35,19 @@ export default function ProductsMenu({
                 <i className="fa fa-list nav-icon"></i>
                 <p>همه محصول ها</p>
               </Link>
+            </li> */}
+
+            <li className="nav-item">
+              <Link
+                to="/product/all"
+                className={`nav-link  
+             ${activeItem === "all" && "active"}`}
+              >
+                <i className="fa fa-list nav-icon"></i>
+                <p>همه محصول ها</p>
+              </Link>
             </li>
+
             <li className="nav-item">
               <Link
                 to="/product/add"

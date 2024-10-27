@@ -7,7 +7,6 @@ import middleware from "./middlewares/middleware";
 const roleRoutes = [
   {
     path: "/role/all",
-    // render: () => <AllRole />,
     render: () => {
       return middleware(
         ["isUserLogin", "checkUserPermissions"],
@@ -19,7 +18,6 @@ const roleRoutes = [
   },
   {
     path: "/role/add",
-    // render: () => <AddRole />,
     render: () => {
       return middleware(
         ["isUserLogin", "checkUserPermissions"],
@@ -31,7 +29,6 @@ const roleRoutes = [
   },
   {
     path: "/role/edit/:roleID",
-    // render: () => <AddRole />,
     render: () => {
       return middleware(
         ["isUserLogin", "checkUserPermissions"],

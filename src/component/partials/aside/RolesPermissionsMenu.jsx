@@ -18,9 +18,9 @@ export default function RolesPermissionsMenu({
        ${openItem === "role-permission" && "menu-open"}`}
         >
           <a
-            href="# "
+            href="#"
             className={`nav-link  
-          ${activeItem === "all-permission" && "active"}`}
+          ${openItem === "role-permission" && "active"}`}
           >
             <i className="nav-icon far fa-hand-rock"></i>
             <p>
